@@ -10,13 +10,13 @@ terraform {
 }
 
 provider "aws" {
-  profile = "tf114"
-  region  = "us-east-1"
+  profile = var.aws_profile
+  region  = var.aws_region
 
   default_tags {
     tags = {
       "managed-by" = "terraform"
-      "owner" = "vitor"
+      "owner"      = "vitor"
     }
   }
 }
