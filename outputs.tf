@@ -17,3 +17,16 @@ output "public_route_table_id" {
 output "private_route_table_id" {
   value = aws_route_table.private.id
 }
+
+output "rds_url" {
+  value = aws_db_instance.web.endpoint
+}
+
+output "rds_username" {
+  value = aws_db_instance.web.username
+}
+
+output "rds_password" {
+  value     = aws_db_instance.web.password
+  sensitive = true
+}

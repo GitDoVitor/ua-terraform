@@ -23,3 +23,9 @@ variable "key-pair" {
 
   sensitive = true
 }
+
+variable "mx_password" {
+  description = ""
+  type        = string
+  default     = "Password1!"
+}

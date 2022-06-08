@@ -6,11 +6,7 @@ sudo apt-get update
 sudo curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 
-# install apache
-sudo apt-get install-y apache2
-echo 'Hello from terraform' > /var/www/html/index.html
-service httpd start
-
-sudo apt-get install -y stress-ng
+sudo docker run -d -e ADMIN_PASSWORD=Password123 -e DATABASE_ENDPOINT=mysql://foo:foobarbaz@"${terraform outputs -raw rds_url}"/mendix dockerdovitor/simple-crud-api-mendix:3da61805
+# sudo apt-get install -y stress-ng
 
 # sudo stress-ng --cpu 32 --timeout 180 --metrics-brief
